@@ -35,6 +35,24 @@ class Blockchain {
         this.chain.push(newBlock);
     }
 
+    isChainValid() {
+        for (let i = 1; i < this.chain.length; i++) {
+            const currentBlock = this.chain[i];
+            const previousBlock = this.chain[i - 1];
+
+            if (currentBlock.hash !== currentBlock.calculateHash()) {
+                return false;
+            }
+
+            if (currentBlock.previousHash !== previousBlock.hash) {
+                return false;
+            }
+
+            return true;
+
+        }
+    }
+
 }
 
 let irvinCoin = new Blockchain();
@@ -42,4 +60,8 @@ irvinCoin.addBlock(new Block(1, "06/05/2021", { amount: 4 }));
 irvinCoin.addBlock(new Block(2, "07/05/2021", { amount: 8 }));
 irvinCoin.addBlock(new Block(3, "08/05/2021", { amount: 16 }));
 
-console.log(JSON.stringify(irvinCoin, null, 4));
+console.log('Is Blockchain Valid? ' + irvinCoin.isChainValid());
+irvinCoin.chain[1].data = { amount: 90 };
+console.log('Is Blockchain Valid? ' + irvinCoin.isChainValid());
+
+//console.log(JSON.stringify(irvinCoin, null, 4));
