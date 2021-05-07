@@ -3,7 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-> A tiny blockchain implemetation using Javascript and Node.js
+> A tiny blockchain implementation using Javascript and Node.js
 
 ## Install
 
