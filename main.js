@@ -22,7 +22,7 @@ class Blockchain {
     }
 
     createGenesisBlock() {
-        return new Block(0, "01/01/2017", "Genesis Block", "0");
+        return new Block(0, "01/01/2021", "Genesis Block", "0");
     }
 
     getLastBlock() {
@@ -40,5 +40,6 @@ class Blockchain {
 let irvinCoin = new Blockchain();
 irvinCoin.addBlock(new Block(1, "06/05/2021", { amount: 4 }));
 irvinCoin.addBlock(new Block(2, "07/05/2021", { amount: 8 }));
+irvinCoin.addBlock(new Block(3, "08/05/2021", { amount: 16 }));
 
 console.log(JSON.stringify(irvinCoin, null, 4));
